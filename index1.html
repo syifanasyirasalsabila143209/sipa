@@ -22,18 +22,16 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
 
-    <!-- My CSS -->
-    <link
-      rel="stylesheet"
-      href="css/style.css"
-    />
+     <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+
 
     <title>My Portfolio | Syifa Nasyira Salsabila</title>
   </head>
   <body id="home">
     <!-- Navbar -->
     <nav
-      class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top"
+      class="navbar navbar-expand-lg navbar-dark bg-secondary shadow-sm fixed-top"
       id="navbar"
     >
       <div class="container">
@@ -98,7 +96,7 @@
     <!-- Akhir Navbar -->
 
     <!-- Jumbotron -->
-    <section class="jumbotron text-center">
+    <section class="jumbotron text-center" id="welcome-section">
       
       <h1 class="display-4">Syifa Nasyira Salsabila</h1>
       <p class="lead">Siswa Xl-PPLG 3 | SMKN 5 Malang</p>
@@ -345,7 +343,7 @@
               </div>
               <button
                 type="submit"
-                class="btn btn-primary btn-kirim"
+                class="btn btn-secondary btn-kirim"
               >
                 Kirim
               </button>
@@ -366,7 +364,7 @@
           </div>
         </div>
       </div>
-    <footer class="bg-primary text-white text-center pb-5">
+    <footer class="bg-secondary text-white text-center pb-5">
       <p>
         Created with <i class="bi bi-heart-fill text-danger"></i> by
         <a
@@ -378,6 +376,41 @@
     </footer>
      <!-- Akhir Footer -->
 
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbwU5ZxatWh8tKSG7DojbAxX5_DqY7PUYZzgZwr2qE1nAdFrQgmIiv_ngGNUF-Jdvc5M/exec";
+      const form = document.forms["WPU-Contact-Form"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // ketika tombol submit diklik
+        // tampilkan tombol loading, hilangkan tombol kirim
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            // tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            // tampilkan alert
+            myAlert.classList.toggle("d-none");
+            // reset formnya
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
     </script>
-   </body>
+
+    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelectorAll(".keyboard-box"), {
+        max: 35,
+        speed: 1000,
+        glare: true,
+      });
+    </script>
+  </body>
 </html>
