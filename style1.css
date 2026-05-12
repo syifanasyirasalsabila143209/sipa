@@ -3,14 +3,14 @@
   --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial;
   --font-mono: 'Fira Code', 'Cascadia Code', ui-monospace, SFMono-Regular, monospace;
   --bg: #0b1220;
-  --surface: rgba(255, 255, 255, 0.03);
-  --muted: #9aa4b2;
-  --text: #e6eef6;
-  --accent: #7dd3fc; /* cyan-300 */
-  --accent-2: #7c3aed; /* purple */
-  --glass: rgba(255, 255, 255, 0.03);
-  --border: rgba(255, 255, 255, 0.06);
-  --shadow-soft: 0 20px 40px rgba(2, 6, 23, 0.6);
+  --surface: rgba(236, 72, 153, 0.12);
+  --muted: #f472b6;
+  --text: #fce7f3;
+  --accent: #ec4899; /* pink */
+  --accent-2: #db2777; /* dark pink */
+  --glass: rgba(236, 72, 153, 0.1);
+  --border: rgba(236, 72, 153, 0.25);
+  --shadow-soft: 0 20px 40px rgba(236, 72, 153, 0.2);
 }
 
 * {
@@ -89,7 +89,7 @@ body {
 
 .nav-link.active,
 .nav-link:hover {
-  background: linear-gradient(90deg, rgba(125, 211, 252, 0.08), rgba(124, 58, 237, 0.06));
+  background: linear-gradient(90deg, rgba(236, 72, 153, 0.12), rgba(219, 39, 119, 0.08));
   color: var(--text);
   transform: translateX(4px);
 }
@@ -110,7 +110,7 @@ body {
   gap: 24px;
   padding: 32px;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(125, 211, 252, 0.06));
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.12), rgba(219, 39, 119, 0.08));
 }
 
 .hero > div:first-child {
@@ -153,21 +153,21 @@ body {
   height: 120px;
   right: -10px;
   top: -10px;
-  background: linear-gradient(135deg, #7dd3fc, #7c3aed);
+  background: linear-gradient(135deg, #ec4899, #db2777);
 }
 .bubble-medium {
   width: 74px;
   height: 74px;
   left: 10px;
   bottom: 8px;
-  background: linear-gradient(135deg, #34d399, #60a5fa);
+  background: linear-gradient(135deg, #fbcfe8, #fce7f3);
 }
 .bubble-small {
   width: 44px;
   height: 44px;
   left: 50px;
   top: 20px;
-  background: linear-gradient(135deg, #f59e0b, #f97316);
+  background: linear-gradient(135deg, #f472b6, #fbcfe8);
 }
 
 .section-header {
@@ -197,7 +197,9 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.03);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
 }
 .course-card:hover {
   transform: translateY(-6px);
@@ -214,10 +216,10 @@ body {
   font-weight: 800;
 }
 .icon-python {
-  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  background: linear-gradient(135deg, #ec4899, #db2777);
 }
 .icon-sql {
-  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  background: linear-gradient(135deg, #fbcfe8, #f472b6);
 }
 .course-icon svg {
   width: 26px;
